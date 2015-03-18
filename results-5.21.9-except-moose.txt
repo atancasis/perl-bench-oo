@@ -1,0 +1,11 @@
+perl: 5.021009
+Iterations: 1000000
+Mojolicious: 6.03
+Mouse: 2.4.1
+Moo: 2.000001
+                     Rate      Moo    Mouse Mouse::Immutable Mojo::Base     Pure
+Moo              291545/s       --     -16%             -17%       -24%     -26%
+Mouse            347222/s      19%       --              -1%       -10%     -12%
+Mouse::Immutable 350877/s      20%       1%               --        -9%     -11%
+Mojo::Base       386100/s      32%      11%              10%         --      -2%
+Pure             393701/s      35%      13%              12%         2%       --

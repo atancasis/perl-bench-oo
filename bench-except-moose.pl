@@ -5,12 +5,10 @@ use lib "$FindBin::Bin/lib";
 use Benchmark ':all';
 use Module::Load 'load';
 use MyClasses;
-use MyClassesMoose;
 
 my $N        = 1_000_000;
 my @versions = qw(Mojolicious Mouse Moo);
-my @names
-  = qw(Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure);
+my @names    = qw(Mojo::Base Mouse::Immutable Mouse Moo Pure);
 
 print "perl: $]\nIterations: $N\n";
 do { load $_; print "$_: ", $_->VERSION, "\n" }
