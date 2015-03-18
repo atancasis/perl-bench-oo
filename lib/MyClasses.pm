@@ -30,6 +30,12 @@ use warnings;
     $obj;
   }
 
+  package My::NewMojo;
+  use NewMojo -base;
+  has foo => 10;
+  has 'bar';
+  has 'baz';
+
   package My::Mojo::Base;
   use Mojo::Base -base;
   has foo => 10;
