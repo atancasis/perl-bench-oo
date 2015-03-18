@@ -1,0 +1,13 @@
+perl: 5.020002
+Iterations: 500000
+Mojolicious: 6.03
+Mouse: 2.4.1
+Moose: 2.1403
+Moo: 2.000001
+                  Rate Moose Moose::Immute    Moo Mouse::Immute Mojo::Base Mouse
+Moose          18025/s    --          -91%   -93%          -95%       -95%  -95%
+Moose::Immute 208333/s 1056%            --   -22%          -40%       -40%  -41%
+Moo           265957/s 1376%           28%     --          -23%       -23%  -24%
+Mouse::Immute 344828/s 1813%           66%    30%            --        -1%   -2%
+Mojo::Base    347222/s 1826%           67%    31%            1%         --   -1%
+Mouse         352113/s 1854%           69%    32%            2%         1%    --
