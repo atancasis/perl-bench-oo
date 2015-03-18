@@ -55,6 +55,18 @@ use warnings;
   has bar => is => 'rw';
   has baz => is => 'rw';
 
+  package My::XSAccessor;
+
+  sub new {
+    my ($class, %args) = @_;
+    $args{foo} //= 10;
+    bless \%args, $class;
+  }
+
+  use Class::XSAccessor {accessors => ['foo'], chained => 1};
+  use Class::XSAccessor {accessors => ['bar'], chained => 1};
+  use Class::XSAccessor {accessors => ['baz'], chained => 1};
+
 }
 
 1;

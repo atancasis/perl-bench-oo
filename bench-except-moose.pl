@@ -9,7 +9,7 @@ use MyBench;
 
 my $N        = 1_000_000;
 my @versions = qw(Mojolicious Mouse Moo);
-my @names    = qw(Mojo::Base Mouse::Immutable Mouse Moo Pure);
+my @names    = qw(Mojo::Base Mouse::Immutable Mouse Moo Pure XSAccessor);
 
 print "perl: $]\nIterations: $N\n";
 do { load $_; print "$_: ", $_->VERSION, "\n" }

@@ -8,10 +8,10 @@ use MyBench;
 use MyClasses;
 use MyClassesMoose;
 
-my $N        = 1_000;
+my $N        = 1_000_000;
 my @versions = qw(Mojolicious Mouse Moo);
 my @names
-  = qw(Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure);
+  = qw(Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure XSAccessor);
 
 print "perl: $]\nIterations: $N\n";
 do { load $_; print "$_: ", $_->VERSION, "\n" }
