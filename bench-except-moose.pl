@@ -5,6 +5,7 @@ use lib "$FindBin::Bin/lib";
 use Benchmark ':all';
 use Module::Load 'load';
 use MyClasses;
+use MyBench;
 
 my $N        = 1_000_000;
 my @versions = qw(Mojolicious Mouse Moo);
@@ -15,5 +16,5 @@ do { load $_; print "$_: ", $_->VERSION, "\n" }
   for @versions;
 
 
-cmpthese($N, MyClasses::build_bench(@names));
+cmpthese($N, MyBench::build_bench(@names));
 

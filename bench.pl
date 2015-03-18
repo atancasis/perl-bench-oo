@@ -4,10 +4,11 @@ use FindBin;
 use lib "$FindBin::Bin/lib";
 use Benchmark ':all';
 use Module::Load 'load';
+use MyBench;
 use MyClasses;
 use MyClassesMoose;
 
-my $N        = 1_000_000;
+my $N        = 1_000;
 my @versions = qw(Mojolicious Mouse Moo);
 my @names
   = qw(Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure);
@@ -17,5 +18,5 @@ do { load $_; print "$_: ", $_->VERSION, "\n" }
   for @versions;
 
 
-cmpthese($N, MyClasses::build_bench(@names));
+cmpthese($N, MyBench::build_bench(@names));
 
