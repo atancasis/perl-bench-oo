@@ -1,9 +1,9 @@
 # perl-test-oo
-Testing different OO modules
+Benchmarking different OO modules
 
 ## Install
 
-    cpanm -n Mojolicious Moose Mouse Moo
+    cpanm -n Mojolicious Moose Mouse Moo Class::XSAccessor
 
 ## Running
 
