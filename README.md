@@ -7,4 +7,4 @@ Testing different OO modules
 
 ## Running
 
-    perl bench.pl
+    perl bench.pl | tee results.txt

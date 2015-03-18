@@ -6,7 +6,8 @@ use Module::Load 'load';
 
 my $N        = 500_000;
 my @versions = qw(Mojolicious Mouse Moose Moo);
-my @names    = qw(Mojo::Base Mouse::Immute Mouse Moose::Immute Moose Moo);
+my @names = qw(Mojo::Base Mouse::Immutable Mouse Moose::Immutable Moose Moo);
+local $| = 1;
 
 {
 
@@ -16,7 +17,7 @@ my @names    = qw(Mojo::Base Mouse::Immute Mouse Moose::Immute Moose Moo);
   has 'bar';
   has 'baz';
 
-  package My::Mouse::Immute;
+  package My::Mouse::Immutable;
   use Mouse;
   has foo => is => 'rw', default => 10;
   has bar => is => 'rw';
@@ -41,7 +42,7 @@ my @names    = qw(Mojo::Base Mouse::Immute Mouse Moose::Immute Moose Moo);
   has bar => is => 'rw';
   has baz => is => 'rw';
 
-  package My::Moose::Immute;
+  package My::Moose::Immutable;
   use Moose;
   has foo => is => 'rw', default => 10;
   has bar => is => 'rw';
