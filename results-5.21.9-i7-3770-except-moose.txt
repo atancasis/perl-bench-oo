@@ -3,10 +3,12 @@ Iterations: 1000000
 Mojolicious: 6.03
 Mouse: 2.4.1
 Moo: 2.000001
-                     Rate Mouse Mouse::Immutable  Moo Mojo::Base Pure XSAccessor
-Mouse            342466/s    --              -1%  -2%        -7% -20%       -39%
-Mouse::Immutable 344828/s    1%               --  -2%        -6% -20%       -39%
-Moo              350877/s    2%               2%   --        -5% -18%       -38%
-Mojo::Base       367647/s    7%               7%   5%         -- -14%       -35%
-Pure             429185/s   25%              24%  22%        17%   --       -24%
-XSAccessor       564972/s   65%              64%  61%        54%  32%         --
+Class::XSAccessor: 1.19
+                     Rate Mouse::Immutable Mouse Moo Mojo::Base NewMojo Pure XSAccessor
+Mouse::Immutable 337838/s               --    0% -1%        -7%     -7% -19%       -40%
+Mouse            337838/s               0%    -- -1%        -7%     -7% -19%       -40%
+Moo              341297/s               1%    1%  --        -6%     -6% -18%       -39%
+Mojo::Base       362319/s               7%    7%  6%         --     -1% -13%       -35%
+NewMojo          364964/s               8%    8%  7%         1%      -- -12%       -35%
+Pure             416667/s              23%   23% 22%        15%     14%   --       -25%
+XSAccessor       558659/s              65%   65% 64%        54%     53%  34%         --

@@ -40,8 +40,7 @@ sub import {
 
   # Mojo modules are strict!
   $_->import for qw(strict warnings utf8);
-  feature->import(':5.20', 'signatures', 'postderef');
-  warnings->unimport('experimental::signatures', 'experimental::postderef');
+  feature->import(':5.10');
 }
 
 sub attr {
