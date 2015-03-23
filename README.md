@@ -1,4 +1,4 @@
-# perl-test-oo
+# perl-bench-oo
 Benchmarking different OO modules
 
 ## Install

@@ -1,16 +1,16 @@
 perl: 5.020002
 Iterations: 1000000
-Mojolicious: 6.03
+Mojolicious: 6.04
+Moose: 2.1403
 Mouse: 2.4.1
 Moo: 2.000001
 Class::XSAccessor: 1.19
-                     Rate Moose Moose::Immutable Mojo::Base  Moo NewMojo Mouse Mouse::Immutable Pure XSAccessor
-Moose             19026/s    --             -90%       -94% -94%    -94%  -95%             -95% -95%       -96%
-Moose::Immutable 187617/s  886%               --       -43% -43%    -45%  -48%             -50% -53%       -65%
-Mojo::Base       326797/s 1618%              74%         --  -0%     -5%   -9%             -13% -18%       -40%
-Moo              326797/s 1618%              74%         0%   --     -5%   -9%             -13% -18%       -40%
-NewMojo          342466/s 1700%              83%         5%   5%      --   -4%              -9% -14%       -37%
-Mouse            358423/s 1784%              91%        10%  10%      5%    --              -4% -10%       -34%
-Mouse::Immutable 374532/s 1869%             100%        15%  15%      9%    4%               --  -6%       -31%
-Pure             400000/s 2002%             113%        22%  22%     17%   12%               7%   --       -26%
-XSAccessor       543478/s 2757%             190%        66%  66%     59%   52%              45%  36%         --
+                     Rate Moose Moose::Immutable  Moo Mojo::Base Mouse Mouse::Immutable Pure XSAccessor
+Moose             19312/s    --             -90% -94%       -94%  -95%             -95% -95%       -97%
+Moose::Immutable 200000/s  936%               -- -41%       -43%  -44%             -45% -51%       -65%
+Moo              337838/s 1649%              69%   --        -3%   -5%              -8% -18%       -41%
+Mojo::Base       348432/s 1704%              74%   3%         --   -2%              -5% -15%       -39%
+Mouse            357143/s 1749%              79%   6%         2%    --              -3% -13%       -38%
+Mouse::Immutable 366300/s 1797%              83%   8%         5%    3%               -- -11%       -36%
+Pure             411523/s 2031%             106%  22%        18%   15%              12%   --       -28%
+XSAccessor       574713/s 2876%             187%  70%        65%   61%              57%  40%         --

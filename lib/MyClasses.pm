@@ -30,11 +30,19 @@ use warnings;
     $obj;
   }
 
-  package My::NewMojo;
-  use NewMojo -base;
-  has foo => 10;
-  has 'bar';
-  has 'baz';
+  package My::Moose;
+  use Moose;
+  has foo => is => 'rw', default => 10;
+  has bar => is => 'rw';
+  has baz => is => 'rw';
+
+  package My::Moose::Immutable;
+  use Moose;
+  has foo => is => 'rw', default => 10;
+  has bar => is => 'rw';
+  has baz => is => 'rw';
+  __PACKAGE__->meta->make_immutable;
+
 
   package My::Mojo::Base;
   use Mojo::Base -base;

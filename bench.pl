@@ -6,12 +6,11 @@ use Benchmark ':all';
 use Module::Load 'load';
 use MyBench;
 use MyClasses;
-use MyClassesMoose;
 
 my $N        = 1_000_000;
-my @versions = qw(Mojolicious Mouse Moo Class::XSAccessor);
+my @versions = qw(Mojolicious Moose Mouse Moo Class::XSAccessor);
 my @names
-  = qw(NewMojo Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure XSAccessor);
+  = qw(Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure XSAccessor);
 
 print "perl: $]\nIterations: $N\n";
 do { load $_; print "$_: ", $_->VERSION, "\n" }

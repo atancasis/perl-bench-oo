@@ -1,0 +1,16 @@
+perl: 5.021010
+Iterations: 1000000
+Mojolicious: 6.04
+Moose: 2.1403
+Mouse: 2.4.1
+Moo: 2.000001
+Class::XSAccessor: 1.19
+                     Rate Moose Moose::Immutable Mouse::Immutable Mouse  Moo Mojo::Base Pure XSAccessor
+Moose             20149/s    --             -91%             -94%  -94% -94%       -95% -95%       -97%
+Moose::Immutable 215517/s  970%               --             -36%  -40% -41%       -49% -50%       -63%
+Mouse::Immutable 338983/s 1582%              57%               --   -5%  -7%       -20% -22%       -42%
+Mouse            357143/s 1672%              66%               5%    --  -2%       -16% -18%       -39%
+Moo              363636/s 1705%              69%               7%    2%   --       -14% -16%       -38%
+Mojo::Base       423729/s 2003%              97%              25%   19%  17%         --  -2%       -28%
+Pure             432900/s 2048%             101%              28%   21%  19%         2%   --       -26%
+XSAccessor       588235/s 2819%             173%              74%   65%  62%        39%  36%         --
