@@ -1,3 +1,4 @@
+#!/usr/bin/env perl
 use strict;
 use warnings;
 use FindBin;
@@ -8,9 +9,9 @@ use MyBench;
 use MyClasses;
 
 my $N        = 1_000_000;
-my @versions = qw(Mojolicious Moose Mouse Moo Class::XSAccessor);
+my @versions = qw(Evo Mojolicious Moose Mouse Moo Class::XSAccessor);
 my @names
-  = qw(Mojo::Base Mouse::Immutable Mouse Moo Moose Moose::Immutable Pure XSAccessor);
+  = qw(Evo::Base Mojo::Base Mouse Moo Moose::Immutable Pure);
 
 print "perl: $]\nIterations: $N\n";
 do { load $_; print "$_: ", $_->VERSION, "\n" }

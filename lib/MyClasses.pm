@@ -10,31 +10,28 @@ use warnings;
   sub new { my $class = shift; bless {@_}, $class }
 
   sub foo {
-    my $obj = shift;
-    return $obj->{foo} //= 10 unless @_;
-    $obj->{foo} = shift;
-    $obj;
+    return exists $_[0]{foo} ? $_[0]{foo} : $_[0]{foo} = 10 if @_ == 1;
+    $_[0]{foo} = $_[1];
+    $_[0];
   }
 
   sub bar {
-    my $obj = shift;
-    return $obj->{bar} unless @_;
-    $obj->{bar} = shift;
-    $obj;
+    return $_[0]{bar} if @_ == 1;
+    $_[0]{bar} = $_[1];
+    $_[0];
   }
 
   sub baz {
-    my $obj = shift;
-    return $obj->{baz} unless @_;
-    $obj->{baz} = shift;
-    $obj;
+    return $_[0]{baz} if @_ == 1;
+    $_[0]{baz} = $_[1];
+    $_[0];
   }
 
-  package My::Moose;
-  use Moose;
-  has foo => is => 'rw', default => 10;
-  has bar => is => 'rw';
-  has baz => is => 'rw';
+  #package My::Moose;
+  #use Moose;
+  #has foo => is => 'rw', default => 10;
+  #has bar => is => 'rw';
+  #has baz => is => 'rw';
 
   package My::Moose::Immutable;
   use Moose;
@@ -50,12 +47,12 @@ use warnings;
   has 'bar';
   has 'baz';
 
-  package My::Mouse::Immutable;
-  use Mouse;
-  has foo => is => 'rw', default => 10;
-  has bar => is => 'rw';
-  has baz => is => 'rw';
-  __PACKAGE__->meta->make_immutable;
+  #package My::Mouse::Immutable;
+  #use Mouse;
+  #has foo => is => 'rw', default => 10;
+  #has bar => is => 'rw';
+  #has baz => is => 'rw';
+  #__PACKAGE__->meta->make_immutable;
 
   package My::Mouse;
   use Mouse;
@@ -69,17 +66,24 @@ use warnings;
   has bar => is => 'rw';
   has baz => is => 'rw';
 
-  package My::XSAccessor;
+  package My::Evo::Base;
+  use Evo::Base -base;
+  has foo => 10;
+  has 'bar';
+  has 'baz';
 
-  sub new {
-    my ($class, %args) = @_;
-    $args{foo} //= 10;
-    bless \%args, $class;
-  }
+  #package My::XSAccessor;
+  #use strict;
+  #use warnings;
 
-  use Class::XSAccessor {accessors => ['foo'], chained => 1};
-  use Class::XSAccessor {accessors => ['bar'], chained => 1};
-  use Class::XSAccessor {accessors => ['baz'], chained => 1};
+  #use Class::XSAccessor {accessors => [qw(bar baz)], chained => 1,
+  #  constructor => 'new'};
+
+  #sub foo {
+  #  return exists $_[0]{foo} ? $_[0]{foo} : $_[0]{foo} = 10 if @_ == 1;
+  #  $_[0]{foo} = $_[1];
+  #  $_[0];
+  #}
 
 }
 
