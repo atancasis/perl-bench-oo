@@ -1,15 +1,15 @@
 perl: 5.020002
 Iterations: 1000000
-Evo: 
-Mojolicious: 6.07
-Moose: 2.1403
-Mouse: 2.4.1
+Evo: 0.170
+Mojolicious: 6.08
+Moose: 2.1404
+Mouse: 2.4.2
 Moo: 2.000001
 Class::XSAccessor: 1.19
-                     Rate Moose::Immutable Mojo::Base   Moo Mouse Pure Evo::Base
-Moose::Immutable 219298/s               --       -37%  -37%  -39% -43%      -59%
-Mojo::Base       347222/s              58%         --   -0%   -3%  -9%      -34%
-Moo              348432/s              59%         0%    --   -3%  -9%      -34%
-Mouse            358423/s              63%         3%    3%    --  -6%      -32%
-Pure             381679/s              74%        10%   10%    6%   --      -28%
-Evo::Base        529101/s             141%        52%   52%   48%  39%        --
+                     Rate Moose::Immutable    Moo Mojo::Base Mouse   Pure    Evo
+Moose::Immutable 221239/s               --   -38%       -38%  -41%   -43%   -57%
+Moo              355872/s              61%     --        -0%   -5%    -9%   -31%
+Mojo::Base       357143/s              61%     0%         --   -5%    -8%   -31%
+Mouse            375940/s              70%     6%         5%    --    -3%   -27%
+Pure             389105/s              76%     9%         9%    4%     --   -25%
+Evo              518135/s             134%    46%        45%   38%    33%     --

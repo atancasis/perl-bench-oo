@@ -66,8 +66,8 @@ use warnings;
   has bar => is => 'rw';
   has baz => is => 'rw';
 
-  package My::Evo::Base;
-  use Evo::Base -base;
+  package My::Evo;
+  use Evo -class;
   has foo => 10;
   has 'bar';
   has 'baz';
