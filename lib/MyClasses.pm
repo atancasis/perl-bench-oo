@@ -67,10 +67,10 @@ use warnings;
   has baz => is => 'rw';
 
   package My::Evo;
-  use Evo -class;
+  use Evo -Class;
   has foo => 10;
   has 'bar';
-  has 'baz';
+  has 'baz', is => 'rw';
 
   #package My::XSAccessor;
   #use strict;
